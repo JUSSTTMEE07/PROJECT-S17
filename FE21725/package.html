@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Birthday Maze of Emotions 🎂</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: white;
+      margin: 0;
+      overflow: hidden;
+    }
+    .scene {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      height: 100vh;
+      text-align: center;
+      transition: background 1s ease-in-out;
+    }
+    .active {
+      display: flex;
+    }
+    .emotion-box {
+      padding: 3rem;
+      border-radius: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.2);
+      max-width: 90%;
+    }
+    .fadeIn {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .haunted-bg {
+      background: linear-gradient(135deg, #4D3F29, #C49A6C, #FFF3D1);
+    }
+    .love-bg {
+      background: linear-gradient(135deg, #3a294f, #8d68aa, #f4d6ff);
+    }
+    .joke-bg {
+      background: radial-gradient(circle, #ffecd2, #fcb69f);
+    }
+    .treasure-bg {
+      background: linear-gradient(135deg, #3f1d38, #AF5279, #ffd6a5);
+    }
+    .final-bg {
+      background: linear-gradient(135deg, #000000, #ff9a9e, #fad0c4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Audio Files -->
+  <audio id="hauntAudio" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7c9bb0d91c.mp3"></audio>
+  <audio id="jokeAudio" src="https://cdn.pixabay.com/audio/2022/03/15/audio_4b3c9b4ac4.mp3"></audio>
+  <audio id="finaleAudio" src="https://cdn.pixabay.com/audio/2022/03/15/audio_a8d2941b45.mp3"></audio>
+
+  <!-- Scenes -->
+  <div id="scene1" class="scene active bg-black">
+    <div class="emotion-box fadeIn">
+      <h1 class="text-4xl sm:text-5xl font-dancing text-pink-400 mb-6">Tayaar ho aage jaane ke liyee....Chotii~Mirchii? 🖤</h1>
+      <button onclick="nextScene()" class="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 px-6 py-3 text-white rounded-full text-lg font-semibold shadow-md hover:scale-105 transition-all">Let's Begin ❤️</button>
+    </div>
+  </div>
+
+  <div id="scene2" class="scene haunted-bg">
+    <div class="emotion-box fadeIn">
+      <h2 class="text-3xl mb-4"> 👻  </h2>
+      <p>Kyaa baat yaha tak poch gyiii... aage jaane ka mann haii ????</p>
+      <button onclick="nextScene()" class="mt-6 bg-white/10 border px-4 py-2 rounded-full">Naiii 🤓 </button>
+    </div>
+  </div>
+
+  <div id="scene3" class="scene love-bg">
+    <div class="emotion-box fadeIn">
+      <h2 class="text-3xl mb-4">🤡🥴</h2>
+      <p> Tohh Naii bolne ke baad bhi aagyii... abb aa hi gyii ho jaoo aage bhii...</p>
+      <button onclick="nextScene()" class="mt-6 bg-white/10 border px-4 py-2 rounded-full">Naii jana 😤</button>
+    </div>
+  </div>
+
+  <div id="scene4" class="scene joke-bg">
+    <div class="emotion-box fadeIn">
+      <h2 class="text-3xl mb-4">🐣🐒</h2>
+      <p>mazza tohh nahii aa rha hogaa... Par aage jaane ke liye aapko kuchh karna hoga😙...</p>
+      <button onclick="nextScene()" class="mt-6 bg-white/10 border px-4 py-2 rounded-full">Yaha Dabao 😏 </button>
+    </div>
+  </div>
+
+  <div id="scene5" class="scene treasure-bg">
+    <div class="emotion-box fadeIn">
+      <h2 class="text-3xl mb-4">🙈😽</h2>
+      <p>As of your 17th birthday....You've earned 17 hearts ❤ Each one says: "KYAA EK HI MAAL BAAR BAAR BHEJ RAHA HAI 🙀😈💀"</p>
+      <button onclick="nextScene()" class="mt-6 bg-white/10 border px-4 py-2 rounded-full"> Aage chalee?? </button>
+    </div>
+  </div>
+
+
+<div id="scene6" class="scene final-bg">
+  <div class="emotion-box fadeIn">
+    <h1 class="text-4xl text-yellow-300 mb-4">Last but not the Least 🌺 </h1>
+    <p class="mb-4"> Teri khushiyo me behh jauu... Tu kahe tohh tera ho jauu... Jivan ki nauka khari hai abhii bhii tu kahe tohh teri aor mor ke fanna ho jauu ... </p>
+    <p class="font-dancing text-3xl text-pink-400">Happieeeelyyyyyyy Burthhdaii Chotii~Mirchii 💕<br>— From Your 1 and onlyyyy   PRATZZZ , with Endless Love 💌</p>
+
+
+    <div class="mt-10 text-center">
+      <a href="aqsa-main/index.html"
+        class="inline-block px-8 py-4 text-xl bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 text-white font-bold rounded-full shadow-xl hover:scale-110 transition-all duration-300">
+        👉 चलो अब आगे बढ़ते हैं ✨
+      </a>
+    </div>
+  </div>
+</div>
+
+  <script>
+    let current = 1;
+    function nextScene() {
+      document.getElementById(`scene${current}`).classList.remove('active');
+
+      if (current === 2) document.getElementById("hauntAudio").play();
+      if (current === 4) document.getElementById("jokeAudio").play();
+      if (current === 6) document.getElementById("finaleAudio").play();
+
+      current++;
+      const next = document.getElementById(`scene${current}`);
+      if (next) next.classList.add('active');
+    }
+  </script>
+</body>
+</html>

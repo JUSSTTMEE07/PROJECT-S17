@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Cake Day, Saumyaa!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #f7b267 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+    .celebration-container {
+      background: linear-gradient(120deg, #fffbe7 0%, #ffe0e9 100%);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      border-radius: 32px;
+      padding: 48px 32px 64px 32px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1.5s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #ff6f91;
+      margin-bottom: 0.5em;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #fff6, 0 1px 0 #fff;
+      animation: popIn 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      80% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    .cake {
+      margin: 0 auto 32px auto;
+      width: 220px;
+      height: 220px;
+      position: relative;
+      z-index: 2;
+      animation: cakeAppear 1.5s 0.5s cubic-bezier(.68,-0.55,.27,1.55) both;
+    }
+    @keyframes cakeAppear {
+      from { opacity: 0; transform: scale(0.8) translateY(40px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .cake-base {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 80px;
+      background: linear-gradient(120deg, #ffb677 0%, #ff6f91 100%);
+      border-radius: 0 0 90px 90px/0 0 80px 80px;
+      box-shadow: 0 8px 24px #ffb67755;
+      border-bottom: 8px solid #f7b267;
+    }
+    .cake-icing {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 40px;
+      background: linear-gradient(90deg, #fff0f6 0%, #ffe0e9 100%);
+      border-radius: 90px 90px 40px 40px/40px 40px 40px 40px;
+      z-index: 2;
+      box-shadow: 0 4px 12px #fff6;
+    }
+    .cake-candle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 12px;
+      height: 48px;
+      background: linear-gradient(120deg, #ffe066 0%, #ff6f91 100%);
+      border-radius: 6px;
+      transform: translateX(-50%);
+      z-index: 3;
+      box-shadow: 0 2px 8px #ff6f9155;
+      animation: candleWobble 2s infinite ease-in-out alternate;
+    }
+    @keyframes candleWobble {
+      0% { transform: translateX(-50%) rotate(-2deg); }
+      100% { transform: translateX(-50%) rotate(2deg); }
+    }
+    .cake-flame {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle at 60% 40%, #ffe066 60%, #ffb677 100%);
+      border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+      transform: translateX(-50%) scaleY(1.2);
+      opacity: 0.85;
+      animation: flameFlicker 1.2s infinite alternate;
+      z-index: 4;
+    }
+    @keyframes flameFlicker {
+      0% { transform: translateX(-50%) scaleY(1.2) scaleX(1); opacity: 0.85; }
+      50% { transform: translateX(-50%) scaleY(1.3) scaleX(0.95); opacity: 1; }
+      100% { transform: translateX(-50%) scaleY(1.1) scaleX(1.05); opacity: 0.8; }
+    }
+    .cake-sprinkle {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff6f91 0%, #ffe066 100%);
+      box-shadow: 0 1px 4px #ff6f9144;
+      z-index: 5;
+      opacity: 0.85;
+      animation: sprinkleBounce 2s infinite alternate;
+    }
+    .cake-sprinkle.s1 { top: 60px; left: 60px; animation-delay: 0.2s; }
+    .cake-sprinkle.s2 { top: 70px; left: 120px; animation-delay: 0.5s; }
+    .cake-sprinkle.s3 { top: 90px; left: 90px; animation-delay: 0.8s; }
+    .cake-sprinkle.s4 { top: 80px; left: 150px; animation-delay: 1.1s; }
+    .cake-sprinkle.s5 { top: 100px; left: 40px; animation-delay: 1.4s; }
+    @keyframes sprinkleBounce {
+      0% { transform: scale(1) translateY(0); }
+      100% { transform: scale(1.1) translateY(-6px); }
+    }
+    .message {
+      font-size: 1.5rem;
+      color: #ff6f91;
+      margin: 1.5em 0 0.5em 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 0 #fff, 0 2px 8px #fff6;
+      animation: fadeIn 2s 1s both;
+    }
+    .signature {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.2rem;
+      color: #f7b267;
+      margin-top: 1em;
+      opacity: 0.8;
+      animation: fadeIn 2.5s 1.5s both;
+    }
+    /* Confetti */
+    .confetti {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .celebration-container {
+        padding: 16px 2vw 28px 2vw;
+        border-radius: 18px;
+        min-width: 0;
+        max-width: 98vw;
+      }
+      .cake {
+        width: 110px;
+        height: 110px;
+      }
+      .cake-base, .cake-icing {
+        width: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .message {
+        font-size: 1.05rem;
+      }
+      .signature {
+        font-size: 1rem;
+      }
+      .celebrate-btn {
+        font-size: 1rem;
+        padding: 0.7em 1.2em;
+      }
+      .intro-overlay {
+        padding: 0;
+      }
+      .turn-on-btn {
+        font-size: 1.1rem;
+        padding: 0.8em 1.5em;
+      }
+      .next-page-btn {
+        font-size: 0.95rem;
+        padding: 0.5em 1em;
+      }
+    }
+    @media (max-width: 430px) {
+      .celebration-container {
+        padding: 8px 1vw 16px 1vw;
+        border-radius: 12px;
+      }
+      .cake {
+        width: 80px;
+        height: 80px;
+      }
+      .cake-base, .cake-icing {
+        width: 60px;
+      }
+      h1 {
+        font-size: 1.1rem;
+      }
+      .message {
+        font-size: 0.9rem;
+      }
+      .signature {
+        font-size: 0.85rem;
+      }
+      .celebrate-btn {
+        font-size: 0.9rem;
+        padding: 0.5em 1em;
+      }
+      .turn-on-btn {
+        font-size: 0.9rem;
+        padding: 0.6em 1em;
+      }
+      .next-page-btn {
+        font-size: 0.8rem;
+        padding: 0.4em 0.7em;
+      }
+    }
+    .intro-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      transition: opacity 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+      opacity: 1;
+    }
+    .intro-overlay.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .turn-on-btn {
+      font-size: 1.5rem;
+      padding: 1em 2.5em;
+      border: 2px solid #fff;
+      border-radius: 2em;
+      background: transparent;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s;
+      outline: none;
+      letter-spacing: 1px;
+    }
+    .turn-on-btn:hover {
+      background: rgba(255,255,255,0.08);
+      color: #ffe066;
+      border-color: #ffe066;
+      transform: scale(1.06);
+    }
+    .celebrate-btn {
+      margin: 2em auto 0 auto;
+      font-size: 1.2rem;
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 2em;
+      background: linear-gradient(90deg, #b388ff 0%, #ff6f91 100%);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      box-shadow: 0 2px 12px #b388ff44;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.4s;
+      outline: none;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+    .celebrate-btn:hover {
+      background: linear-gradient(90deg, #ff6f91 0%, #b388ff 100%);
+      transform: scale(1.07) rotate(1deg);
+      box-shadow: 0 6px 24px #ff6f9166;
+    }
+    .glass-hover {
+      backdrop-filter: blur(16px) saturate(180%);
+      background: rgba(255, 255, 255, 0.35) !important;
+      box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.25) !important;
+      border: 1.5px solid rgba(255,255,255,0.25) !important;
+      transform: translateY(-18px) scale(1.04) rotate(-2deg);
+      transition: all 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .next-page-btn {
+      position: fixed;
+      right: 4vw;
+      bottom: 4vw;
+      min-width: 0;
+      min-height: 0;
+      padding: 0.7em 1.2em;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(255,255,255,0.18);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 2em;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      backdrop-filter: blur(12px) saturate(180%);
+      transition: all 0.35s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.2s;
+      cursor: pointer;
+      letter-spacing: 1px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      box-sizing: border-box;
+    }
+    .next-page-btn .btn-text {
+      display: inline;
+    }
+    .next-page-btn:hover {
+      background: rgba(255,255,255,0.28);
+      color: #ff6f91;
+      box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.28);
+      transform: scale(1.07) rotate(-2deg);
+      border-color: #ffe066;
+    }
+    .next-page-btn:active, .next-page-btn.btn-pressed {
+      background: rgba(255,255,255,0.38);
+      color: #ffe066;
+      transform: scale(0.96) rotate(1deg);
+      box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-overlay" id="introOverlay">
+    <button class="turn-on-btn" id="turnOnBtn">Turn on the lights</button>
+  </div>
+  <canvas class="confetti"></canvas>
+  <div class="celebration-container" id="celebrationCard">
+    <h1>Happy Cake Day,Bebboo💟</h1>
+    <div class="cake">
+      <div class="cake-base"></div>
+      <div class="cake-icing"></div>
+      <div class="cake-candle">
+        <div class="cake-flame"></div>
+      </div>
+      <div class="cake-sprinkle s1"></div>
+      <div class="cake-sprinkle s2"></div>
+      <div class="cake-sprinkle s3"></div>
+      <div class="cake-sprinkle s4"></div>
+      <div class="cake-sprinkle s5"></div>
+    </div>
+    <button class="celebrate-btn" id="celebrateBtn">Mojj kroo 💅🎀</button>
+    <button class="next-page-btn" id="nextPageBtn">〰<span class="btn-text"> Chaloo aagee</span></button>
+    <div class="message">Wishing you the sweetest day as sweet as the cake🎂👐 , aurr aapko wo sab khane ko mile jo aapka mann ho khane ka🥟🍭🌶 <br>Aurr kyaa abb cake cut bhi karooo  </div>
+    <div class="signature">Aapka PRATZZZ 🍻👑</div>
+  </div>
+  <script>
+    // --- Intro Overlay Logic ---
+    const introOverlay = document.getElementById('introOverlay');
+    const turnOnBtn = document.getElementById('turnOnBtn');
+    turnOnBtn.addEventListener('click', () => {
+      introOverlay.classList.add('fade-out');
+      setTimeout(() => { introOverlay.style.display = 'none'; }, 1200);
+    });
+    // --- Celebrate Button Logic ---
+    const celebrateBtn = document.getElementById('celebrateBtn');
+    const celebrationCard = document.getElementById('celebrationCard');
+    celebrateBtn.addEventListener('click', () => {
+      // Card hover and glassmorphism
+      celebrationCard.classList.add('glass-hover');
+      // Start confetti blast
+      startConfetti();
+      setTimeout(() => celebrationCard.classList.remove('glass-hover'), 1800);
+    });
+    // Confetti effect (only after Celebrate)
+    const confetti = document.querySelector('.confetti');
+    const ctx = confetti.getContext('2d');
+    let W = window.innerWidth, H = window.innerHeight;
+    confetti.width = W;
+    confetti.height = H;
+    let pieces = [];
+    let confettiActive = false;
+    const colors = [
+      '#ff6f91', '#f7b267', '#ffe066', '#fffbe7', '#ffe0e9', '#b388ff', '#8ce99a', '#ffd6e0'
+    ];
+    function randomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function ConfettiPiece() {
+      this.x = randomInt(0, W);
+      this.y = randomInt(-H, 0);
+      this.r = randomInt(6, 14);
+      this.color = colors[randomInt(0, colors.length-1)];
+      this.d = randomInt(2, 6);
+      this.tilt = randomInt(-10, 10);
+      this.tiltAngle = 0;
+      this.tiltAngleIncremental = (Math.random() * 0.07) + 0.05;
+    }
+    function drawConfetti() {
+      ctx.clearRect(0, 0, W, H);
+      for (let i = 0; i < pieces.length; i++) {
+        let p = pieces[i];
+        ctx.beginPath();
+        ctx.lineWidth = p.r;
+        ctx.strokeStyle = p.color;
+        ctx.moveTo(p.x + p.tilt + p.r/3, p.y);
+        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r);
+        ctx.stroke();
+      }
+      updateConfetti();
+    }
+    function updateConfetti() {
+      for (let i = 0; i < pieces.length; i++) {
+        let p = pieces[i];
+        p.y += p.d;
+        p.tiltAngle += p.tiltAngleIncremental;
+        p.tilt = Math.sin(p.tiltAngle) * 15;
+        if (p.y > H) {
+          pieces[i] = new ConfettiPiece();
+          pieces[i].y = 0;
+        }
+      }
+    }
+    function resizeCanvas() {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      confetti.width = W;
+      confetti.height = H;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    function startConfetti() {
+      if (confettiActive) return;
+      confettiActive = true;
+      pieces = [];
+      for (let i = 0; i < 120; i++) {
+        pieces.push(new ConfettiPiece());
+      }
+      animateConfetti();
+    }
+    function animateConfetti() {
+      if (!confettiActive) return;
+      drawConfetti();
+      requestAnimationFrame(animateConfetti);
+    }
+    // --- Confetti blast function ---
+    function blastConfetti() {
+      for (let i = 0; i < 60; i++) {
+        setTimeout(() => pieces.push(new ConfettiPiece()), i * 5);
+      }
+    }
+    // Next page button logic
+    const nextPageBtn = document.getElementById('nextPageBtn');
+    nextPageBtn.addEventListener('click', () => {
+      nextPageBtn.classList.add('btn-pressed');
+      setTimeout(() => {
+        window.location.href = 'celebrate.html';
+      }, 500);
+    });
+  </script>
+</body>
+</html> 
